@@ -437,15 +437,21 @@ Casual riders average 22 minutes per ride. Members average 12 minutes. Casual ri
 
 ## Section A — Geographic Distribution: Where Riders Start and End
 ![alt text](<strt mem-2.png>)
+
 **Figure 9.** Number of trips at starting points(Member)
 ![alt text](<end mem-1.png>)
+
 **Figure 10.** Number of trips at end points(Member)
 
 
 **Annual members** have some dominant stations — Ellis Ave & 55th St, Ellis Ave & 60th St, University Ave & 57th St, LaSalle St & Jackson Blvd, Ravenswood Ave, and Halsted St & Clybourn — which map onto office corridors, transit interchanges, and university campuses, most notably the University of Chicago. These are functional commuter nodes, not leisure destinations.
+
 ![alt text](<strt cas-2.png>)
+
 **Figure 11.** Number of trips at start points(Casual)
+
 ![alt text](<end cas-1.png>)
+
 **Figure 12.** Number of trips at end points(Casual)
 
 **Casual riders** cluster exclusively along Chicago's northeastern recreational belt. Their top origin and destination stations — DuSable Lake Shore Dr & Monroe St, Navy Pier, Millennium Park, Streeter Dr & Grand Ave, Shedd Aquarium, Adler Planetarium, Field Museum, and Buckingham Fountain — form a coherent arc along the lakefront and Museum Campus. These are not transit nodes. They are tourist and leisure destinations. 
