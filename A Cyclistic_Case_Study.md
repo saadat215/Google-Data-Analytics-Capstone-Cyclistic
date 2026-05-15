@@ -389,6 +389,7 @@ The hourly breakdown confirms the commuting hypothesis for members. **Members di
 To capture the combined effect of both day-of-week and hour-of-day simultaneously, a density heatmap is used. This provides the richest single-chart summary of behavioural difference between the two groups.
 
 ![alt text](blue.png)
+
 **Figure 5.** Ride density heatmap — rides per hour per day for members.
 
 ![alt text](cas.png)
