@@ -156,6 +156,7 @@ SELECT * FROM "annual_trips_2025"
 LIMIT 10;
 ```
 ![alt text](image.png)
+
 Screenshot 4: First ten rows of the new combined table
 
 The following query is performed to get an idea about the no of values present:
@@ -213,6 +214,7 @@ SELECT
 FROM annual_trips_2025;
 ```
 ![alt text](image-6.png)
+
 ### It can be seen from the screenshot that number of such missing values or empty space value exist.
 Now it is necessary to check if there are any duplicate values which might skew the results. This is done by checking duplicates for any values in the ride_id column since this is the primary key. 
 
@@ -223,6 +225,7 @@ FROM annual_trips_2025
 
 ```
 ![alt text](image-4.png)
+
 ### It can be seen from the screenshot that there are no **duplicate** values.
 
 Typically, rides should not be less than 60 seconds or more than a day or 24 hours(86400 seconds). Rides recorded with such values indicate mistakes in recording or docking/undocking of the bike. Also, end time of ride can not be before start time of ride. Following query is performed to view if any such abnormal rides are recorded:
@@ -369,6 +372,7 @@ Analysing when each group rides — across months, days of the week, and hours o
 #### Monthly Trends
 
 ![alt text](<Monthly Ride Trends Member vs Casual-1.png>)
+
 **Figure 2.** Total rides by month for annual members and casual riders.
 
 
@@ -395,6 +399,7 @@ The hourly breakdown confirms the commuting hypothesis for members. **Members di
 To capture the combined effect of both day-of-week and hour-of-day simultaneously, a density heatmap is used. This provides the richest single-chart summary of behavioural difference between the two groups.
 
 ![alt text](blue.png)
+
 **Figure 5.** Ride density heatmap — rides per hour per day for members.
 
 ![alt text](cas.png)
@@ -441,16 +446,24 @@ Casual riders average 22 minutes per ride. Members average 12 minutes. Casual ri
 ### 5.5 Route & Geographic Analysis
 
 ## Section A — Geographic Distribution: Where Riders Start and End
+
 ![alt text](<strt mem-2.png>)
+
 **Figure 10.** Number of trips at starting points(Member)
+
 ![alt text](<end mem-1.png>)
+
 **Figure 11.** Number of trips at end points(Member)
 
 
 **Annual members** have some dominant stations — Ellis Ave & 55th St, Ellis Ave & 60th St, University Ave & 57th St, LaSalle St & Jackson Blvd, Ravenswood Ave, and Halsted St & Clybourn — which map onto office corridors, transit interchanges, and university campuses, most notably the University of Chicago. These are functional commuter nodes, not leisure destinations.
+
 ![alt text](<strt cas-2.png>)
+
 **Figure 12.** Number of trips at start points(Casual)
+
 ![alt text](<end cas-1.png>)
+
 **Figure 13.** Number of trips at end points(Casual)
 
 **Casual riders** cluster exclusively along Chicago's northeastern recreational belt. Their top origin and destination stations — DuSable Lake Shore Dr & Monroe St, Navy Pier, Millennium Park, Streeter Dr & Grand Ave, Shedd Aquarium, Adler Planetarium, Field Museum, and Buckingham Fountain — form a coherent arc along the lakefront and Museum Campus. These are not transit nodes. They are tourist and leisure destinations. 
@@ -460,7 +473,9 @@ Casual riders average 22 minutes per ride. Members average 12 minutes. Casual ri
 ---
 
 ## Section B — Journey Type: One-Way vs. Round Trips
+
 ![alt text](<Rt type pie-1.png>)
+
 **Figure 14.** Route type used ratio
 
 
@@ -477,18 +492,21 @@ This matters for conversion strategy: a casual rider who repeatedly completes ro
 ## Section C — The Sankey Diagrams: Route Flow by Member Type
 
 ![alt text](<Sankey Total.png>)
+
 **Figure 15.** Top routes by ride count and member type
 
 This figure shows the full picture: both casual and member flows side by side. The flows fanning out to the right reveal that casual trips terminate at a **wider, more dispersed set of destinations**, while member flows converge more tightly on a smaller cluster of endpoints.
 
 
 ![alt text](<Sankey Casual.png>)
+
 **Figure 16.** Top routes by ride count and casual riders
 
 This chart isolates casual rider flow and makes the leisure circuit unmistakable. The dominant flows originate from DuSable Lake Shore Dr & Monroe St and DuSable Harbor, and terminate at Navy Pier, Streeter Dr & Grand Ave, and back to DuSable Lake Shore Dr & Monroe St itself. The flows are broad, curving, and multi-directional — visually representing the exploratory, non-linear character of casual journeys.
 
 
 ![alt text](<Sankey particular.png>)
+
 **Figure 17.** Specific route by ride count and member type
 
 This chart surfaces a particularly telling data point: the route **Ellis Ave & 60th St → University Ave & 57th St**, taken 768 times by casual riders. These 768 casual rides on a commuter-pattern route represent exactly the conversion-ready population the marketing team should target: riders already behaving like members, but paying casual prices. 
@@ -580,7 +598,7 @@ The monthly duration data adds further precision: May–August is also when casu
 
 Casual riders average 22 minutes per ride overall, rising to 25–26 minutes on weekends and 28 minutes at the 10 AM leisure peak — nearly double the member average of 12 minutes. Under day-pass pricing, longer rides cost casual riders proportionally more without any additional benefit.
 
-Immediately after a casual rider completes a ride exceeding 15 minutes, a push notification should deliver a personalised, ride-specific cost comparison: *"Your ride today was 24 minutes. As an annual member, you would have saved £X on this ride alone."* This converts an abstract membership benefit into a concrete, personal financial statement tied to a journey the rider just experienced — a far more persuasive trigger than generic advertising.
+Immediately after a casual rider completes a ride exceeding 15 minutes, a push notification should deliver a personalised, ride-specific cost comparison: *"Your ride today was 24 minutes. As an annual member, you would have saved $X on this ride alone."* This converts an abstract membership benefit into a concrete, personal financial statement tied to a journey the rider just experienced — a far more persuasive trigger than generic advertising.
 
 > **Data anchor:** Hourly duration trends (Figure 9); Weekly duration trends (Figure 8); Monthly duration trends (Figure 7).
 
