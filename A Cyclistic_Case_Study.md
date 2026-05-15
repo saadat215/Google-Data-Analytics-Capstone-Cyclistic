@@ -1,8 +1,6 @@
 Google Data Analytics · Capstone Project
 
-# How Does A Bike-Share Navigate Speedy Success?
-
-A full-year analysis of Cyclistic's 2025 trip data to uncover behavioural differences between casual riders and annual members
+# Cyclistic 2025 Case Study: Analyzing User Behavior to Drive Annual Membership Growth
 
 📅 **Dataset: Jan – Dec 2025**
 🚲 **3,661,396 Rides Analysed**
