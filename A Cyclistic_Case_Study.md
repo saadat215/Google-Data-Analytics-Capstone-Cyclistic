@@ -125,7 +125,7 @@ CREATE TABLE annual_trips_2025 AS
 ```
 <br>
 
-![alt text](<Import CSVs.png>)
+![alt text](<images/Import CSVs.png>)
 <p align="center"> 
  Screenshot 1: Importing the 12 CSV files.
 <br>
