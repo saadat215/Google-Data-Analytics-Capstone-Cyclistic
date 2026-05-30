@@ -147,7 +147,7 @@ To check the total no of rows in the new compiled table, the following SQL query
 ```
 SELECT COUNT(*) FROM annual_trips_2025 t ;
 ```
-The following code is executed to show the first 10 rows of the dataset in order to understand the dataset better.
+The following code is executed to show the first 10 rows of the dataset in order to understand the dataset better..
 
 ```
 SELECT * FROM "annual_trips_2025"
