@@ -130,12 +130,12 @@ CREATE TABLE annual_trips_2025 AS
  Screenshot 1: Importing the 12 CSV files.
 <br>
 
-![alt text](<Union SQL.png>)
+![alt text](<images/Union SQL.png>)
 <p align="center"> 
 Screenshot 2: Executing the UNION ALL query in DBeaver to merge 12 months of data.
 <br>
 
-![alt text](<new table.png>)
+![alt text](<images/new table.png>)
 <p align="center"> 
 Screenshot 3: The resulting table 'annual_trips_2025'
 <br>
@@ -153,7 +153,7 @@ The following code is executed to show the first 10 rows of the dataset in order
 SELECT * FROM "annual_trips_2025"
 LIMIT 10;
 ```
-![alt text](image.png)
+![alt text](<images\Sel and view ann.png>)
 
 Screenshot 4: First ten rows of the new combined table
 
@@ -162,7 +162,7 @@ The following query is performed to get an idea about the no of values present:
 SELECT COUNT(ride_id)
 FROM annual_trips_2025
 ```
-![alt text](image-5.png)
+![alt text](<images\count ride intitial.png>)
 
 Screenshot 5: Count of ride ids
 
@@ -187,7 +187,7 @@ SELECT
 	COUNT(*) - COUNT(member_casual) AS member_casual_null
 FROM annual_trips_2025
 ```
-![alt text](<Screenshot 2026-05-03 191536.png>)
+![alt text](<images\null.png>)
 
 
 ### It can be seen from the screenshot that there are no **null** values.
@@ -211,7 +211,7 @@ SELECT
     SUM(CASE WHEN member_casual IS NULL OR member_casual = '' THEN 1 ELSE 0 END) AS missing_member_casual
 FROM annual_trips_2025;
 ```
-![alt text](image-6.png)
+![alt text](<images\missing.png>)
 
 ### It can be seen from the screenshot that number of such missing values or empty space value exist.
 Now it is necessary to check if there are any duplicate values which might skew the results. This is done by checking duplicates for any values in the ride_id column since this is the primary key. 
@@ -222,7 +222,7 @@ SELECT
 FROM annual_trips_2025
 
 ```
-![alt text](image-4.png)
+![alt text](<images\dupl ride id.png>)
 
 ### It can be seen from the screenshot that there are no **duplicate** values.
 
@@ -234,7 +234,7 @@ SELECT
     SUM(CASE WHEN ended_at < started_at THEN 1 ELSE 0 END) AS neg_rides
 FROM annual_trips_2025;
 ```
-![alt text](image-7.png)
+![alt text](<images\long,short neg rides.png>)
 
 ### It can be seen from the screenshot that there are number of such abnormal values.
 <br>
@@ -290,7 +290,7 @@ WHERE
     AND end_lat IS NOT NULL 
     AND end_lng IS NOT NULL;
 ```
-![alt text](image-8.png)    
+![alt text](<images\count ride clean.png>)    
 
 ### It can be seen from the screenshot that the no of new rows is ***3,661,396***. So, 5,601,662 − 3,661,396 = ***1,940,266*** erroneous values were removed.
 
@@ -300,7 +300,7 @@ CREATE TABLE compact_trips AS
 SELECT ride_id, rideable_type, start_station_name, end_station_name, member_casual, day_of_week, month
 FROM annual_trips_2025_cleaned atc 
 ```
-![alt text](image-9.png)
+![alt text](<images\view compact.png>)
 
 The number of trips taken by each type of bike can be viewed by the following query:
 
@@ -310,7 +310,7 @@ SELECT DISTINCT rideable_type,
 FROM compact_trips ct 
 GROUP BY rideable_type;
 ```
-![alt text](image-10.png)
+![alt text](<images\bike type compact.png>)
 
 The number of trips taken by each type of rider can be viewed by the following query:
 
@@ -320,7 +320,8 @@ SELECT DISTINCT member_casual,
 FROM compact_trips ct
 GROUP BY member_casual;
 ```
-![alt text](image-11.png)
+![alt text](<images/mem type compact.png>)
+
 
 
 The new table **annual\_trips\_2025\_cleaned**, was created applying the following transformations and filters simultaneously:
@@ -351,7 +352,7 @@ The cleaned dataset was connected to both Power BI and Tableau Public for visual
 
 The first step is to establish who is using Cyclistic and which bike types each group gravitates toward.
 
-![alt text](<Screenshot 2026-05-14 025442.png>)
+![alt text](<images/Screenshot 2026-05-14 025442.png>)
 
 **Figure 1.** Overall member vs. casual rider split (left) and Breakdown of rides by bike type and rider category (right).
 
@@ -369,7 +370,7 @@ Analysing when each group rides — across months, days of the week, and hours o
 
 #### Monthly Trends
 
-![alt text](<Monthly Ride Trends Member vs Casual-1.png>)
+![alt text](<images/Monthly Ride Trends Member vs Casual-1.png>)
 
 **Figure 2.** Total rides by month for annual members and casual riders.
 
@@ -378,7 +379,7 @@ This monthly analysis reveals that Members are "All-Weather Commuters" while Cas
 
 #### Weekly Trends
 
-![alt text](<Weekly Ride Trends Member vs Casual.png>)
+![alt text](<images/Weekly Ride Trends Member vs Casual.png>)
 
 **Figure 3.** Total rides per day of the week for annual members and casual riders.
 
@@ -386,7 +387,7 @@ The weekly pattern is the single clearest indicator of different use cases. **Me
 
 #### Hourly Trends
 
-![alt text](<Hourly Ride Trends Member vs Casual (2).png>)
+![alt text](<images/Hourly Ride Trends Member vs Casual (2).png>)
 
 **Figure 4.** Total rides by hour of the day for annual members and casual riders.
 
@@ -396,11 +397,11 @@ The hourly breakdown confirms the commuting hypothesis for members. **Members di
 
 To capture the combined effect of both day-of-week and hour-of-day simultaneously, a density heatmap is used. This provides the richest single-chart summary of behavioural difference between the two groups.
 
-![alt text](blue.png)
+![alt text](images/blue.png)
 
 **Figure 5.** Ride density heatmap — rides per hour per day for members.
 
-![alt text](cas.png)
+![alt text](images/cas.png)
 
 **Figure 6.** Ride density heatmap — rides per hour per day for casual riders.
 
@@ -420,7 +421,7 @@ Ride frequency tells us *when* each group rides. Duration tells us *how they rid
 
 #### Monthly Duration Trends
 
-![alt text](<avg dur Monthly Ride Trends Member vs Casual (2).png>)
+![alt text](<images/avg dur Monthly Ride Trends Member vs Casual (2).png>)
 
 **Figure 7.** Average ride duration (minutes) per month for casual riders and annual members.
 
@@ -428,14 +429,14 @@ Ride frequency tells us *when* each group rides. Duration tells us *how they rid
 
 #### Weekly Duration Trends
 
-![alt text](<avg dur day.png>)
+![alt text](<images/avg dur day.png>)
 
 **Figure 8.** Average ride duration (minutes) per day of the week for casual riders and annual members.
 
 Casual riders ride longest on **Sundays (26 min)** and **Saturdays (25 min)**, tapering to approximately 20 minutes on weekdays. This elongation on leisure days is consistent with relaxed sightseeing or exploratory cycling. Members show a flat profile of **12–14 minutes every day of the week**, with minimal variance — the hallmark of fixed-route, habitual commuting.
 #### Hourly Duration Trends
 
-![alt text](<avg dur hour.png>)
+![alt text](<images/avg dur hour.png>)
 
 **Figure 9.** Overall average ride duration for casual riders and annual members across all of 2025.
 
@@ -445,22 +446,22 @@ Casual riders average 22 minutes per ride. Members average 12 minutes. Casual ri
 
 ## Section A — Geographic Distribution: Where Riders Start and End
 
-![alt text](<strt mem-2.png>)
+![alt text](<images/strt mem-2.png>)
 
 **Figure 10.** Number of trips at starting points(Member)
 
-![alt text](<end mem-1.png>)
+![alt text](<images/end mem-1.png>)
 
 **Figure 11.** Number of trips at end points(Member)
 
 
 **Annual members** have some dominant stations — Ellis Ave & 55th St, Ellis Ave & 60th St, University Ave & 57th St, LaSalle St & Jackson Blvd, Ravenswood Ave, and Halsted St & Clybourn — which map onto office corridors, transit interchanges, and university campuses, most notably the University of Chicago. These are functional commuter nodes, not leisure destinations.
 
-![alt text](<strt cas-2.png>)
+![alt text](<images/strt cas-2.png>)
 
 **Figure 12.** Number of trips at start points(Casual)
 
-![alt text](<end cas-1.png>)
+![alt text](<images/end cas-1.png>)
 
 **Figure 13.** Number of trips at end points(Casual)
 
@@ -472,7 +473,7 @@ Casual riders average 22 minutes per ride. Members average 12 minutes. Casual ri
 
 ## Section B — Journey Type: One-Way vs. Round Trips
 
-![alt text](<Rt type pie-1.png>)
+![alt text](<images/Rt type pie-1.png>)
 
 **Figure 14.** Route type used ratio
 
@@ -489,21 +490,21 @@ This matters for conversion strategy: a casual rider who repeatedly completes ro
 
 ## Section C — The Sankey Diagrams: Route Flow by Member Type
 
-![alt text](<Sankey Total.png>)
+![alt text](<images/Sankey Total.png>)
 
 **Figure 15.** Top routes by ride count and member type
 
 This figure shows the full picture: both casual and member flows side by side. The flows fanning out to the right reveal that casual trips terminate at a **wider, more dispersed set of destinations**, while member flows converge more tightly on a smaller cluster of endpoints.
 
 
-![alt text](<Sankey Casual.png>)
+![alt text](<images/Sankey Casual.png>)
 
 **Figure 16.** Top routes by ride count and casual riders
 
 This chart isolates casual rider flow and makes the leisure circuit unmistakable. The dominant flows originate from DuSable Lake Shore Dr & Monroe St and DuSable Harbor, and terminate at Navy Pier, Streeter Dr & Grand Ave, and back to DuSable Lake Shore Dr & Monroe St itself. The flows are broad, curving, and multi-directional — visually representing the exploratory, non-linear character of casual journeys.
 
 
-![alt text](<Sankey particular.png>)
+![alt text](<images/Sankey particular.png>)
 
 **Figure 17.** Specific route by ride count and member type
 
