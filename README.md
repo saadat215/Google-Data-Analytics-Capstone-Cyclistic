@@ -10,7 +10,7 @@
 
 **Google Data Analytics Professional Certificate — Capstone Case Study**
 
-[![LinkedIn Article](https://img.shields.io/badge/Read_Full_Article-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/pulse/cyclistic-2025-what-366-million-bike-rides-tell-us-saadat-shahriar)
+[![LinkedIn Article](https://img.shields.io/badge/Read_Full_Article-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/pulse/cyclistic-2025-case-study-analyzing-user-behavior-drive-shahriar-ntycf)
 [![Case Study](https://img.shields.io/badge/Full_Case_Study-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saadat215/Google-Data-Analytics-Capstone-Cyclistic/blob/main/A%20Cyclistic_Case_Study.md)
 [![Dataset](https://img.shields.io/badge/Dataset-Divvy_Tripdata_2025-FF6B35?style=for-the-badge&logo=databricks&logoColor=white)](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
@@ -45,7 +45,6 @@
 | [🔄](#-analysis-process) | Analysis Process (6 Steps) |
 | [📊](#-key-visualisations--insights) | Key Visualisations & Insights |
 | [💡](#-top-7-recommendations) | Top 7 Recommendations |
-| [📁](#-repository-structure) | Repository Structure |
 | [👤](#-about-me) | About Me |
 
 ---
@@ -97,7 +96,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 1 — Rider Composition & Bike Type
 
-<img src="images/bike_type.png" alt="Bike Type Distribution" width="48%"/> <img src="images/member_pie.png" alt="Member vs Casual Split" width="48%"/>
+<img src="images/Bike type.png" alt="Bike Type Distribution" width="48%"/> <img src="images/member pie.png" alt="Member vs Casual Split" width="48%"/>
 
 - Members: **2.35M rides (64.22%)** | Casual: **1.31M rides (35.78%)**
 - Casual riders split almost equally between classic (18.2%) and electric (17.5%) — unlike members who lean classic
@@ -106,7 +105,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 2 — When Do They Ride? Time Patterns
 
-<img src="images/monthly.png" alt="Monthly Ride Trends" width="100%"/>
+<img src="images\Monthly Ride Trends Member vs Casual.png" alt="Monthly Ride Trends" width="100%"/>
 
 | | Members | Casual Riders |
 |--|---------|---------------|
@@ -118,7 +117,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 <br>
 
-<img src="images/weekly.png" alt="Weekly Ride Trends" width="100%"/>
+<img src="images\Weekly Ride Trends Member vs Casual.png" alt="Weekly Ride Trends" width="100%"/>
 
 > **Insight:** Members peak Tuesday–Thursday (commute days). Casual riders peak Saturday–Sunday (leisure days). Exact opposites.
 
@@ -126,7 +125,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 3 — The Heatmap: One Chart That Says Everything
 
-<img src="images/heatmap.png" alt="Ride Density Heatmap" width="100%"/>
+<img src="images\Ride density day vs hor.png" alt="Ride Density Heatmap" width="100%"/>
 
 | | Members | Casual Riders |
 |--|---------|---------------|
@@ -140,7 +139,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 4 — Average Ride Duration
 
-<img src="images/avg_dur_hour.png" alt="Duration by Hour" width="100%"/>
+<img src="images\avg dur hour.png" alt="Duration by Hour" width="100%"/>
 
 - **Casual riders average 22 minutes per ride. Members average 12 minutes** — an 83% difference.
 - Casual duration peaks at **10 AM (28 min)** — mid-morning leisurely exploration
@@ -152,25 +151,25 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 > A Sankey diagram visualises flow. Left = start stations. Centre = rider type. Right = end stations. **Ribbon width = number of rides.** The wider the ribbon, the more trips on that route.
 
-<img src="images/sankey_total.png" alt="Sankey Total" width="100%"/>
+<img src="images\Sankey Total.png" alt="Sankey Total" width="100%"/>
 
 *Total view: Casual (upper block) fed by wide ribbons from lakefront leisure stations. Member (lower block) fed by Ellis Ave / University Ave campus corridors.*
 
 <br>
 
-<img src="images/sankey_casual.png" alt="Sankey Casual" width="100%"/>
+<img src="images\Sankey Casual.png" alt="Sankey Casual" width="100%"/>
 
 *Casual view highlighted: DuSable Lake Shore Dr → itself is the widest single ribbon (~6,000 round trips). Navy Pier → Navy Pier is second. Casual riders cycle in loops at tourist landmarks.*
 
 <br>
 
-<img src="images/sankey_detail.png" alt="Sankey Detail" width="100%"/>
+<img src="images\Sankey particular.png" alt="Sankey Detail" width="100%"/>
 
 *Detail view: Tooltip shows **Ellis Ave & 60th St → University Ave & 57th St, Casual riders: 768 rides** — the #1 member commute route, ridden by casuals who haven't converted. A conversion pocket invisible in any aggregate chart.*
 
 <br>
 
-<img src="images/rt_bar.png" alt="Top Routes Bar Chart" width="100%"/>
+<img src="images\Rt type bar.png" alt="Top Routes Bar Chart" width="100%"/>
 
 | Top Casual Routes | Top Member Routes |
 |-------------------|-------------------|
@@ -183,9 +182,13 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 6 — Geographic Analysis
 
-<img src="images/start_map.png" alt="Start Station Maps" width="100%"/>
+<img src="images\strt mem-1.png" alt="Start Station Maps" width="100%"/>
 
-<img src="images/end_map.png" alt="End Station Maps" width="100%"/>
+<img src="images\strt cas-1.png" alt="Start Station Maps" width="100%"/>
+
+<img src="images\end mem.png" alt="End Station Maps" width="100%"/>
+
+<img src="images\end cas.png" alt="End Station Maps" width="100%"/>
 
 | | Members | Casual Riders |
 |--|---------|---------------|
@@ -229,35 +232,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ---
 
-## 📁 Repository Structure
 
-```
-Google-Data-Analytics-Capstone-Cyclistic/
-│
-├── README.md                          ← You are here
-├── A Cyclistic_Case_Study.md          ← Full case study (SQL + analysis + all charts)
-│
-└── images/                            ← All visualisation assets
-    ├── cover.png                      ← LinkedIn/GitHub cover image
-    ├── bike_type.png                  ← Bike type distribution (Power BI)
-    ├── member_pie.png                 ← Member vs casual split (Power BI)
-    ├── monthly.png                    ← Monthly ride trends
-    ├── weekly.png                     ← Weekly ride trends
-    ├── hourly.png                     ← Hourly ride trends
-    ├── heatmap.png                    ← Ride density heatmap (Tableau)
-    ├── avg_dur_hour.png               ← Avg duration by hour
-    ├── avg_dur_day.png                ← Avg duration by day
-    ├── avg_dur_month.png              ← Avg duration by month
-    ├── rt_type_pie.png                ← Round trip vs one-way
-    ├── sankey_total.png               ← Sankey — total view (Tableau)
-    ├── sankey_casual.png              ← Sankey — casual highlighted
-    ├── sankey_detail.png              ← Sankey — route detail tooltip
-    ├── rt_bar.png                     ← Top routes bar chart
-    ├── start_map.png                  ← Starting station maps
-    └── end_map.png                    ← Ending station maps
-```
-
----
 
 ## 👤 About Me
 
@@ -271,7 +246,7 @@ I completed the **Google Data Analytics Professional Certificate** and built thi
 
 <br>
 
-[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saadat-shahriar)
+[![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saadatshahriar/)
 [![GitHub](https://img.shields.io/badge/See_My_GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saadat215)
 
 ---
