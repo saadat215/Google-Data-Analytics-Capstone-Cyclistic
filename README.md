@@ -96,7 +96,7 @@ Following the **Google Data Analysis Framework** — all six phases applied end-
 
 ### 1 — Rider Composition & Bike Type
 
-<img src="images/Bike type.png" alt="Bike Type Distribution" width="48%"/> 
+<img src="images/Bike Type.png" alt="Bike Type Distribution" width="48%"/> 
 <img src="images/member pie.png" alt="Member vs Casual Split" width="48%"/>
 
 - Members: **2.35M rides (64.22%)** | Casual: **1.31M rides (35.78%)**
