@@ -153,7 +153,7 @@ The following code is executed to show the first 10 rows of the dataset in order
 SELECT * FROM "annual_trips_2025"
 LIMIT 10;
 ```
-![alt text](<images\Sel and view ann.png>)
+![alt text](<images/Sel and view ann.png>)
 
 Screenshot 4: First ten rows of the new combined table
 
@@ -162,7 +162,7 @@ The following query is performed to get an idea about the no of values present:
 SELECT COUNT(ride_id)
 FROM annual_trips_2025
 ```
-![alt text](<images\count ride intitial.png>)
+![alt text](<images/count ride intitial.png>)
 
 Screenshot 5: Count of ride ids
 
@@ -187,7 +187,7 @@ SELECT
 	COUNT(*) - COUNT(member_casual) AS member_casual_null
 FROM annual_trips_2025
 ```
-![alt text](<images\null.png>)
+![alt text](<images/null.png>)
 
 
 ### It can be seen from the screenshot that there are no **null** values.
@@ -211,7 +211,7 @@ SELECT
     SUM(CASE WHEN member_casual IS NULL OR member_casual = '' THEN 1 ELSE 0 END) AS missing_member_casual
 FROM annual_trips_2025;
 ```
-![alt text](<images\missing.png>)
+![alt text](<images/missing.png>)
 
 ### It can be seen from the screenshot that number of such missing values or empty space value exist.
 Now it is necessary to check if there are any duplicate values which might skew the results. This is done by checking duplicates for any values in the ride_id column since this is the primary key. 
@@ -222,7 +222,7 @@ SELECT
 FROM annual_trips_2025
 
 ```
-![alt text](<images\dupl ride id.png>)
+![alt text](<images/dupl ride id.png>)
 
 ### It can be seen from the screenshot that there are no **duplicate** values.
 
@@ -234,7 +234,7 @@ SELECT
     SUM(CASE WHEN ended_at < started_at THEN 1 ELSE 0 END) AS neg_rides
 FROM annual_trips_2025;
 ```
-![alt text](<images\long,short neg rides.png>)
+![alt text](<images/long,short neg rides.png>)
 
 ### It can be seen from the screenshot that there are number of such abnormal values.
 <br>
@@ -290,7 +290,7 @@ WHERE
     AND end_lat IS NOT NULL 
     AND end_lng IS NOT NULL;
 ```
-![alt text](<images\count ride clean.png>)    
+![alt text](<images/count ride clean.png>)    
 
 ### It can be seen from the screenshot that the no of new rows is ***3,661,396***. So, 5,601,662 − 3,661,396 = ***1,940,266*** erroneous values were removed.
 
@@ -300,7 +300,7 @@ CREATE TABLE compact_trips AS
 SELECT ride_id, rideable_type, start_station_name, end_station_name, member_casual, day_of_week, month
 FROM annual_trips_2025_cleaned atc 
 ```
-![alt text](<images\view compact.png>)
+![alt text](<images/view compact.png>)
 
 The number of trips taken by each type of bike can be viewed by the following query:
 
@@ -310,7 +310,7 @@ SELECT DISTINCT rideable_type,
 FROM compact_trips ct 
 GROUP BY rideable_type;
 ```
-![alt text](<images\bike type compact.png>)
+![alt text](<images/bike type compact.png>)
 
 The number of trips taken by each type of rider can be viewed by the following query:
 
